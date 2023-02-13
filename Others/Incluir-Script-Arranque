@@ -1,0 +1,19 @@
+###########################################
+#  INCLUIR SCRIPT AL INICIAR EL SERVIDOR  #
+###########################################
+nano arranque.sh
+--------------------------------------------------------------------------------------------------------
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
+sudo service minidlna restart
+sudo minidlnad -R
+--------------------------------------------------------------------------------------------------------
+sudo chmod -x arranque.sh
+sudo cp arranque.sh /etc/init.d/
+sudo update-rc.d arranque.sh defaults
+sudo nano /etc/rc.local
+--------------------------------------------------------------------------------------------------------
+Incluir la siguiente linea de comando después de "fi" y antes de exit 0
+--------------------------------------------------------------------------------------------------------
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
+sudo service minidlna restart
+sudo minidlnad -R
