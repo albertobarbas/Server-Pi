@@ -1,0 +1,11 @@
+sudo dd if=/dev/mmcblk0 of=/mnt/BARBA/Servidor/Backup.img bs=1M
+-----------------------------------------------------------------------------
+Sin Instalar
+-----------------------------------------------------------------------------
+wget https://raw.githubusercontent.com/Drewsif/PiShrink/master/pishrink.sh
+chmod +x pishrink.sh
+sudo mv pishrink.sh /usr/local/bin
+-----------------------------------------------------------------------------
+Instalado
+-----------------------------------------------------------------------------
+sudo pishrink.sh /mnt/BARBA/Servidor/Backup.img /mnt/BARBA/Servidor/FinalBackup.img
